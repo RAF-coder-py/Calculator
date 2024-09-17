@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
 let affichage = "";
+let calcul = [];
 
-function showResult(valeur){
+function show(valeur){
     affichage += valeur;
     document.getElementById("result").innerHTML = affichage;
 }
-function reloadResult(){
-    document.getElementById("result").innerHTML = affichage;
+function reloadResult(valeur){
+    document.getElementById("result").innerHTML = valeur;
 }
 
 const btn1 = document.getElementById("btn1")
@@ -25,52 +26,76 @@ const btn_moin = document.getElementById("btn-")
 const btn_fois = document.getElementById("btn*")
 const btn_div = document.getElementById("btn/")
 const btn_del = document.getElementById("btn_del")
+const btn_enter = document.getElementById("btn_enter")
 
 btn1.addEventListener('click', ()=>{
-    showResult("1")
-})
+    show("1")
+    calcul = calcul.concat(1)
+});
 btn2.addEventListener('click', ()=>{
-    showResult("2")
-})
+    show("2")
+    calcul = calcul.concat(2)
+});
 btn3.addEventListener('click', ()=>{
-    showResult("3")
-})
+    show("3")
+    calcul = calcul.concat(3)
+});
 btn4.addEventListener('click', ()=>{
-    showResult("4")
-})
+    show("4")
+    calcul = calcul.concat(4)
+});
 btn5.addEventListener('click', ()=>{
-    showResult("5")
-})
+    show("5")
+    calcul = calcul.concat(5)
+});
 btn6.addEventListener('click', ()=>{
-    showResult("6")
-})
+    show("6")
+    calcul = calcul.concat(6)
+});
 btn7.addEventListener('click', ()=>{
-    showResult("7")
-})
+    show("7")
+    calcul = calcul.concat(7)
+});
 btn8.addEventListener('click', ()=>{
-    showResult("8")
-})
+    show("8")
+    calcul = calcul.concat(8)
+});
 btn9.addEventListener('click', ()=>{
-    showResult("9")
-})
+    show("9")
+    calcul = calcul.concat(9)
+});
 btn0.addEventListener('click', ()=>{
-    showResult("0")
-})
+    show("0")
+    calcul = calcul.concat(0)
+});
 btn_plus.addEventListener('click', ()=>{
-    showResult("+")
-})
+    show("+")
+    calcul = calcul.concat("+")
+});
 btn_moin.addEventListener('click', ()=>{
-    showResult("-")
-})
+    show("-")
+    calcul = calcul.concat("-")
+});
 btn_fois.addEventListener('click', ()=>{
-    showResult("*")
-})
+    show("*")
+    calcul = calcul.concat("*")
+});
 btn_div.addEventListener('click', ()=>{
-    showResult("/")
-})
+    show("/")
+    calcul = calcul.concat("/")
+});
+
 btn_del.addEventListener('click', ()=>{
     affichage = affichage.slice(0, -1);
-    reloadResult();
-})
+    calcul = calcul.slice(0, -1)
+    reloadResult(affichage);
+});
 
-})
+btn_enter.addEventListener('click', ()=>{
+    calcul = calcul.join('');
+    calcul = eval(calcul)
+    reloadResult(calcul);
+
+});
+
+});
