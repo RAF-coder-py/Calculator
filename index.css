@@ -1,0 +1,56 @@
+:root {
+    --main-width: 50px;
+}
+
+body {
+    background-image: url(Images/background_calculator.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajustez selon la taille de votre conteneur */
+}
+
+.range { 
+    display: flex;
+    border-radius: 8px;
+    width: 100%
+}
+
+.btn{
+    width: var(--main-width);
+    height: 50px;
+    background-color: #b3d9fa; /* Couleur de fond */
+    color: rgb(24, 44, 57); /* Couleur du texte */
+    border: 2px groove rgb(0, 3, 4); 
+    border-radius: 8px;
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer;
+    margin: 2px;
+}
+
+.result {
+    height: 50px;
+    width: calc(var(--main-width)*4+6);
+    color: rgb(24, 44, 57);;
+    text-align: center;
+    line-height: 50px;
+    background-color: #b3d9fa;
+    border: 2px groove rgb(0, 3, 4);
+    border-radius: 8px;
+    margin: 2px;
+    font-size: 150%;
+}
+
+.calculator {
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 3cqb 3px 10px rgba(0, 0, 0, 0.4);
+}
+
