@@ -95,6 +95,8 @@ btn_enter.addEventListener('click', ()=>{
     calcul = calcul.join('');
     calcul = eval(calcul)
     reloadResult(calcul);
+    calcul = [];
+    affichage="";
 
 });
 
